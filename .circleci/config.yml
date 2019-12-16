@@ -7,3 +7,4 @@
        - checkout
        - run: javac -d . FirstJava.java
        - run: java FirstJava
+         command: javac -version
