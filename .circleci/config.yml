@@ -39,4 +39,4 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
-      - run: java FirstJava
+      - run: java -cp ~/repo/target/test-classes/FirstJava
