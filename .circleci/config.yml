@@ -6,7 +6,5 @@
      steps:
        - checkout
        - run: javac -version
-       - run: javac FirstJava.java
-#       - run: javac FirstJava.java
-#       - run: java FirstJava
-#       - run: javap FirstJava
+       - run java install
+       - run: java test
