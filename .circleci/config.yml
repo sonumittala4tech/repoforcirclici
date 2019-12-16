@@ -6,16 +6,4 @@
        - image: circleci/openjdk:8-jdk-stretch
      steps:
        - checkout
-       - restore_cache:
-          key: circleci-demo-java-{{ checksum "pom.xml" }}
-       - run: mvn dependency:go-offline
-       - save_cache:
-           paths:
-             - ~/.m2
-             key: circleci-demo-java-{{ checksum "pom.xml" }}
-       - run: mvn package
-#       - run: java FirstJava
-        - store_test_results:
-            path: target/test-classes
-       - store_artifacts:
-           path: target/demo-java-1.0-SNAPSHOT.jar
+       - run: java FirstJava
