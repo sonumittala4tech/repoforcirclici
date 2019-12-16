@@ -1,10 +1,10 @@
  version: 2
  jobs:
    build:
-     working_directory: /repoforcirclici
+#     working_directory: /repoforcirclici
      docker:
        - image: circleci/openjdk:8-jdk-stretch
      steps:
        - checkout
        - run: javac -d . FirstJava.java
-       - run: java FirstJava
+       - run: java -d FirstJava
