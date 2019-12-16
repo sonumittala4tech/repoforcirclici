@@ -42,7 +42,7 @@ jobs:
       - run:
           command: |
             cd src/test/java
-            CLASSNAMES=$(circleci tests glob "**/*.java")
+            CLASSNAMES=$(circleci tests glob "FirstJava.java")
             cd ../../..
       - store_test_results:
           path: build/test-results/test
