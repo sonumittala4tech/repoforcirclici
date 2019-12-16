@@ -2,8 +2,9 @@
  jobs:
    build:
      docker:
-       - image: circleci/openjdk:8-jdk-stretch
+#       - image: circleci/openjdk:8-jdk-stretch
+        - image: java:7
      steps:
        - checkout
        - run: javac -version
-       - run: java FirstJava
+       - run: java test
