@@ -5,6 +5,6 @@
        - image: circleci/openjdk:8-jdk-stretch
      steps:
        - checkout
+       - command: javac -version
        - run: javac -d . FirstJava.java
        - run: java FirstJava
-         command: javac -version
