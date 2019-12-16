@@ -44,3 +44,5 @@ jobs:
             cd src/test/java
             CLASSNAMES=$(circleci tests glob "**/*.java")
             cd ../../..
+      - store_test_results:
+          path: build/test-results/test
