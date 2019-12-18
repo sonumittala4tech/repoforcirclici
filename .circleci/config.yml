@@ -1,24 +1,35 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/tmp
+    working_directory: /app
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: java:7
     steps:
       - checkout
       - run:
-          name: Pulling java docker.
-          command: |
-            docker pull java:7
+          name: Compiling java program.
+          command: javac -d . sample.java
+
       - run:
-          name: Create class file using java docker.
-          command: |
-            docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac -d . FirstJava.java
+          name: Execute java class file.
+          command: java smplProg.sample
+
       - run:
-          name: Compiling and Executing java class files using java docker.
-          command: |
-            docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java FirstJava
-      - run:
-          name: Displaying java class.
-          command: |
-            docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javap FirstJava
+          name: Disassembles one or more class files.
+          command: javap smplProg.sample
+      #- run:
+      #    name: Pulling java docker.
+      #    command: |
+      #      docker pull java:7
+      #- run:
+      #    name: Create class file using java docker.
+      #    command: |
+      #      docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac -d . JavProg.java
+      #- run:
+      #    name: Compiling and Executing java class files using java docker.
+      #    command: |
+      #      docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java learnjava.JavProg
+      #- run:
+      #    name: Displaying java class.
+      #    command: |
+      #      docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javap learnjava.JavProg
