@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Compiling java program.
-          command: javac -d . sample.java
+          command: javac -d . smplProg.sample.java
 
       - run:
           name: Execute java class file.
