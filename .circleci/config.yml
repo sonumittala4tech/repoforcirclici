@@ -8,5 +8,5 @@ jobs:
       - checkout
       - run: ps aux | grep docker
       - run: java -version
-      - run: javac -classpath .;~/app smplProg.sample.java
+      - run: javac -classpath .:~/app smplProg.sample.java
       - run: java smplProg.sample
