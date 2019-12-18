@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
+    working_directory: ~/app
     docker:
       - image: java:7
     steps:
@@ -14,9 +14,9 @@ jobs:
           name: Execute java class file.
           command: java smplProg.sample
 
-      - run:
-          name: Disassembles one or more class files.
-          command: javap smplProg.sample
+      #- run:
+      #    name: Disassembles one or more class files.
+      #   command: javap smplProg.sample
       #- run:
       #    name: Pulling java docker.
       #    command: |
