@@ -6,5 +6,7 @@ jobs:
       - image: java:7
     steps:
       - checkout
+      - run: ps aux | grep docker
+      - run: docker ps -a
       - run: javac -d . sample.java
       - run: java smplProg.sample
